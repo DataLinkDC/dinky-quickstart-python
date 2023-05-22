@@ -1,6 +1,5 @@
 from pyflink.common import Row
 from pyflink.table import ListView, DataTypes
-from pyflink.table.types import DataType
 from pyflink.table.udf import udaf, udtaf, TableAggregateFunction, AggregateFunction
 
 

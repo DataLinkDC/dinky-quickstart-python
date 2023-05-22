@@ -1,8 +1,7 @@
 import functools
 
-import pyflink.table.udf
 from pyflink.table import DataTypes
-from pyflink.table.udf import ScalarFunction, udf, TableFunction
+from pyflink.table.udf import ScalarFunction, udf
 
 
 class HashCode(ScalarFunction):
