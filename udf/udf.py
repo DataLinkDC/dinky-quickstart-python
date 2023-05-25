@@ -4,12 +4,9 @@ from pyflink.table import DataTypes
 from pyflink.table.udf import ScalarFunction, udf
 
 
-class Split(ScalarFunction):
-    def eval(self, s, sep, maxSplit):
-        return str(s).split(sep, maxSplit)
-
-
-split = udf(Split(), result_type=DataTypes.STRING())
+@udf(result_type=DataTypes.STRING())
+def split(s: str, sep: int, maxSplit: int):
+    return str(s)[sep: maxSplit]
 
 
 class HashCode(ScalarFunction):
