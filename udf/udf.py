@@ -5,11 +5,8 @@ from pyflink.table.udf import ScalarFunction, udf
 
 
 class Split(ScalarFunction):
-    def __init__(self):
-        self.factor = 12
-
-    def eval(self, s,sep,maxSplit):
-        return str(s).split(sep,maxSplit)
+    def eval(self, s, sep, maxSplit):
+        return str(s).split(sep, maxSplit)
 
 
 split = udf(Split(), result_type=DataTypes.STRING())
